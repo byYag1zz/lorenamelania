@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6d2c91">
+
+<title>Melania & Lorena ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&family=Allura&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    min-height:100vh;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+
+    background:
+        radial-gradient(circle at 50% 35%,rgba(255,92,190,.25),transparent 35%),
+        radial-gradient(circle at 20% 80%,rgba(105,55,180,.45),transparent 40%),
+        radial-gradient(circle at 85% 20%,rgba(218,60,170,.25),transparent 35%),
+        linear-gradient(
+            145deg,
+            #190b35 0%,
+            #42145d 42%,
+            #7c226f 72%,
+            #c63891 100%
+        );
+
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 25%,
+            rgba(8,3,20,.4) 100%
+        );
+
+    z-index:1;
+}
+
+
+/* =========================================
+   YILDIZLAR
+========================================= */
+
+.stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+}
+
+.star{
+    position:absolute;
+    bottom:-20px;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 12px rgba(255,170,245,.9);
+
+    opacity:0;
+
+    animation:starRise linear infinite;
+}
+
+@keyframes starRise{
+
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    70%{
+        opacity:.65;
+    }
+
+    100%{
+        transform:translateY(-115vh) scale(1.1);
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   MARKA
+========================================= */
+
+.brand{
+    position:fixed;
+    top:26px;
+    left:28px;
+
+    z-index:20;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(20px,2.5vw,30px);
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.7);
+}
+
+.mini-heart{
+    position:relative;
+
+    width:23px;
+    height:23px;
+
+    background:#ff4fa9;
+
+    transform:rotate(-45deg);
+
+    animation:miniBeat 1.1s infinite;
+
+    filter:
+        drop-shadow(0 0 10px #ff4fa9);
+}
+
+.mini-heart::before,
+.mini-heart::after{
+    content:"";
+
+    position:absolute;
+
+    width:23px;
+    height:23px;
+
+    background:inherit;
+
+    border-radius:50%;
+}
+
+.mini-heart::before{
+    top:-11px;
+    left:0;
+}
+
+.mini-heart::after{
+    top:0;
+    left:11px;
+}
+
+@keyframes miniBeat{
+
+    0%,100%{
+        transform:rotate(-45deg) scale(1);
+    }
+
+    15%{
+        transform:rotate(-45deg) scale(1.2);
+    }
+
+    30%{
+        transform:rotate(-45deg) scale(1);
+    }
+
+    45%{
+        transform:rotate(-45deg) scale(1.12);
+    }
+
+    60%{
+        transform:rotate(-45deg) scale(1);
+    }
+}
+
+
+/* =========================================
+   ANA ALAN
+========================================= */
+
+main{
+    position:relative;
+    z-index:5;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        100px
+        20px
+        170px;
+}
+
+.content{
+    width:min(1100px,100%);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/* =========================================
+   GERÇEK YAZI KALBİ
+========================================= */
+
+.heart-wrapper{
+
+    position:relative;
+
+    width:min(98vw,740px);
+
+    height:min(88vw,650px);
+
+    min-height:450px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    animation:heartPulse 1.15s
+        infinite
+        cubic-bezier(.4,0,.2,1);
+}
+
+
+/*
+   KALP SADECE YAZILARDAN OLUŞUYOR.
+*/
+
+.text-heart{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:5;
+}
+
+
+/* Kalbin arkasındaki ışık */
+
+.heart-glow{
+
+    position:absolute;
+
+    width:70%;
+    height:65%;
+
+    left:15%;
+    top:18%;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,45,175,.28),
+            rgba(255,45,175,.1) 35%,
+            transparent 70%
+        );
+
+    filter:blur(45px);
+
+    pointer-events:none;
+}
+
+
+/* =========================================
+   KALBİ OLUŞTURAN KELİMELER
+========================================= */
+
+.heart-word{
+
+    position:absolute;
+
+    transform:
+        translate(-50%,-50%);
+
+    white-space:nowrap;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-weight:600;
+
+    color:white;
+
+    line-height:1;
+
+    text-shadow:
+        0 0 4px white,
+        0 0 9px rgba(255,180,240,.95),
+        0 0 17px rgba(255,70,185,.9),
+        0 0 28px rgba(255,50,170,.5);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+
+    user-select:none;
+}
+
+
+/* =========================================
+   ORTADAKİ SİNEM
+========================================= */
+
+.center-name{
+
+    position:absolute;
+
+    z-index:20;
+
+    left:50%;
+    top:53%;
+
+    transform:
+        translate(-50%,-50%);
+
+    /*
+       Ortadaki Sinem diğer kelimelerden
+       tamamen farklı ve daha zarif.
+    */
+
+    font-family:
+        'Allura',
+        'Cormorant Garamond',
+        cursive;
+
+    font-size:
+        clamp(75px,14vw,125px);
+
+    font-weight:400;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    white-space:nowrap;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 15px white,
+        0 0 30px #ffb0e5,
+        0 0 50px #ff72c5,
+        0 0 80px #ff4eaa;
+
+    pointer-events:none;
+
+    transition:
+        transform .12s ease;
+
+    animation:centerGlow 2.2s
+        ease-in-out
+        infinite alternate;
+}
+
+@keyframes centerGlow{
+
+    from{
+        filter:brightness(1);
+    }
+
+    to{
+        filter:brightness(1.18);
+    }
+}
+
+
+/* =========================================
+   KALP ATIŞI
+========================================= */
+
+@keyframes heartPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    10%{
+        transform:scale(1.035);
+    }
+
+    20%{
+        transform:scale(1);
+    }
+
+    32%{
+        transform:scale(1.025);
+    }
+
+    44%{
+        transform:scale(1);
+    }
+}
+
+
+/* =========================================
+   MESAJ KUTUSU
+========================================= */
+
+.distance-box{
+
+    width:min(590px,92vw);
+
+    min-height:140px;
+
+    margin-top:0;
+
+    padding:25px 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.075);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.23),
+        inset 0 1px 0
+        rgba(255,255,255,.12);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.distance-text{
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(19px,3vw,27px);
+
+    line-height:1.45;
+
+    text-shadow:
+        0 0 12px
+        rgba(255,255,255,.25);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+
+/* =========================================
+   SADECE SİNEM
+========================================= */
+
+.special{
+
+    margin-top:21px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(24px,4vw,35px);
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 28px #ff9ddd,
+        0 0 50px #ff4eaa;
+
+    animation:specialGlow 2.5s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes specialGlow{
+
+    from{
+        opacity:.8;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+/* =========================================
+   ECG
+========================================= */
+
+.ecg-container{
+
+    position:fixed;
+
+    z-index:10;
+
+    bottom:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(700px,86vw);
+
+    height:75px;
+
+    pointer-events:none;
+}
+
+.ecg-label{
+
+    position:absolute;
+
+    top:-22px;
+    left:0;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    opacity:.5;
+}
+
+.ecg{
+
+    width:100%;
+    height:100%;
+
+    overflow:visible;
+}
+
+.ecg-line{
+
+    fill:none;
+
+    stroke:
+        rgba(255,255,255,.9);
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255,120,210,.9)
+        );
+
+    stroke-dasharray:1000;
+
+    stroke-dashoffset:1000;
+
+    animation:
+        ecgMove 2.2s
+        linear
+        infinite;
+}
+
+@keyframes ecgMove{
+
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+
+/* =========================================
+   MÜZİK
+========================================= */
+
+.music-control{
+
+    position:fixed;
+
+    z-index:30;
+
+    top:23px;
+    right:24px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.09);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.music-control:hover{
+
+    transform:scale(1.08);
+
+    background:
+        rgba(255,255,255,.17);
+}
+
+
+/* =========================================
+   AÇILIŞ
+========================================= */
+
+.start-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(184,43,135,.3),
+            transparent 40%
+        ),
+        #160725;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.start-screen.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+}
+
+.start-content{
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.start-heart{
+
+    position:relative;
+
+    width:65px;
+    height:65px;
+
+    margin:
+        0 auto 35px;
+
+    background:#f64ca7;
+
+    transform:rotate(-45deg);
+
+    animation:
+        miniBeat 1.1s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            #ff4ba9
+        );
+}
+
+.start-heart::before,
+.start-heart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:65px;
+    height:65px;
+
+    background:inherit;
+
+    border-radius:50%;
+}
+
+.start-heart::before{
+
+    top:-32px;
+    left:0;
+}
+
+.start-heart::after{
+
+    top:0;
+    left:32px;
+}
+
+.start-title{
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(35px,8vw,62px);
+
+    margin-bottom:10px;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,255,255,.7);
+}
+
+.start-subtitle{
+
+    opacity:.7;
+
+    font-size:13px;
+
+    margin-bottom:30px;
+}
+
+.start-button{
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-radius:50px;
+
+    padding:13px 28px;
+
+    color:white;
+
+    background:
+        rgba(255,255,255,.08);
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.start-button:hover{
+
+    background:
+        rgba(255,255,255,.17);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================
+   MOBİL
+========================================= */
+
+@media(max-width:600px){
+
+    .brand{
+
+        top:18px;
+        left:17px;
+
+        font-size:20px;
+    }
+
+    .mini-heart{
+
+        width:18px;
+        height:18px;
+    }
+
+    .mini-heart::before,
+    .mini-heart::after{
+
+        width:18px;
+        height:18px;
+    }
+
+    .mini-heart::before{
+        top:-9px;
+    }
+
+    .mini-heart::after{
+        left:9px;
+    }
+
+    .music-control{
+
+        top:15px;
+        right:15px;
+
+        width:40px;
+        height:40px;
+    }
+
+    main{
+
+        padding:
+            90px
+            10px
+            150px;
+    }
+
+    .heart-wrapper{
+
+        width:100vw;
+
+        height:88vw;
+
+        min-height:400px;
+
+        max-height:500px;
+    }
+
+    .heart-word{
+
+        text-shadow:
+            0 0 3px white,
+            0 0 7px #ff9ddd,
+            0 0 14px #ff4eaa;
+    }
+
+    .center-name{
+
+        top:53%;
+
+        font-size:58px;
+
+        letter-spacing:1px;
+    }
+
+    .distance-box{
+
+        min-height:125px;
+
+        padding:
+            20px;
+    }
+
+    .special{
+
+        margin-top:16px;
+    }
+
+    .ecg-container{
+
+        width:92vw;
+
+        bottom:15px;
+
+        height:58px;
+    }
+
+    .ecg-label{
+
+        top:-18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     YILDIZLAR
+========================================= -->
+
+<div
+    class="stars"
+    id="stars">
+</div>
+
+
+<!-- =========================================
+     MARKA
+========================================= -->
+
+<div class="brand">
+
+    <div class="mini-heart"></div>
+
+    <span>
+        Lorena &amp; Melania
+    </span>
+
+</div>
+
+
+<!-- =========================================
+     MÜZİK
+========================================= -->
+
+<audio
+    id="music"
+    loop
+    preload="auto"
+    autoplay>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+<button
+    class="music-control"
+    id="musicButton">
+
+    ♫
+
+</button>
+
+
+<!-- =========================================
+     AÇILIŞ EKRANI
+========================================= -->
+
+<div
+    class="start-screen"
+    id="startScreen">
+
+    <div class="start-content">
+
+        <div class="start-heart"></div>
+
+        <div class="start-title">
+            Lorena &amp; Melania
+        </div>
+
+        <div class="start-subtitle">
+            Sana özel küçük bir dünya...
+        </div>
+
+        <button
+            class="start-button"
+            id="startButton">
+
+            Kalbimize Gir ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     ANA
+========================================= -->
+
+<main>
+
+<div class="content">
+
+
+    <!-- =====================================
+         GERÇEK YAZI KALBİ
+    ====================================== -->
+
+    <div class="heart-wrapper">
+
+        <div class="heart-glow"></div>
+
+        <!--
+            BURASI SADECE YAZILARDAN OLUŞUYOR.
+            CSS KALP YOK.
+        -->
+
+        <div
+            class="text-heart"
+            id="textHeart">
+        </div>
+
+
+        <!-- ORTA -->
+
+        <div class="center-name">
+            Lorena
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         MESAJ
+    ====================================== -->
+
+    <div class="distance-box">
+
+        <div
+            class="distance-text"
+            id="distanceText">
+
+            Mesafeler sadece aramızdaki yolu uzatır,
+            kalplerimizin arasındaki yolu değil. ❤️
+
+        </div>
+
+    </div>
+
+
+    <div class="special">
+        Lorena
+    </div>
+
+
+</div>
+
+</main>
+
+
+<!-- =========================================
+     ECG
+========================================= -->
+
+<div class="ecg-container">
+
+    <div class="ecg-label">
+        kalbim senin için atıyor
+    </div>
+
+    <svg
+        class="ecg"
+        viewBox="0 0 700 75"
+        preserveAspectRatio="none">
+
+        <path
+            class="ecg-line"
+            d="
+            M0 38
+            L90 38
+            L105 38
+            L118 38
+            L128 20
+            L138 57
+            L150 7
+            L165 38
+            L250 38
+            L265 38
+            L278 38
+            L288 20
+            L298 57
+            L310 7
+            L325 38
+            L410 38
+            L425 38
+            L438 38
+            L448 20
+            L458 57
+            L470 7
+            L485 38
+            L570 38
+            L585 38
+            L598 38
+            L608 20
+            L618 57
+            L630 7
+            L645 38
+            L700 38
+            "
+        />
+
+    </svg>
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   YILDIZLAR
+===================================================== */
+
+const stars =
+    document.getElementById("stars");
+
+for(let i = 0; i < 70; i++){
+
+    const star =
+        document.createElement("span");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    const size =
+        1 + Math.random() * 2;
+
+    star.style.width =
+        size + "px";
+
+    star.style.height =
+        size + "px";
+
+    star.style.animationDuration =
+        9 + Math.random() * 13 + "s";
+
+    star.style.animationDelay =
+        -(Math.random() * 20) + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* =====================================================
+   MÜZİK
+===================================================== */
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+const startScreen =
+    document.getElementById("startScreen");
+
+const startButton =
+    document.getElementById("startButton");
+
+let musicPlaying = false;
+
+
+function startMusic(){
+
+    music.volume = .45;
+
+    music.play()
+        .then(() => {
+
+            musicPlaying = true;
+
+            musicButton.textContent = "♫";
+
+        })
+        .catch(() => {
+
+            musicPlaying = false;
+
+        });
+}
+
+
+/*
+    Sayfa açılır açılmaz müzik başlatmayı deniyoruz.
+    Mobil tarayıcı engellerse "Kalbimize Gir"
+    butonuna basıldığında kesin şekilde
+    tekrar deneniyor.
+*/
+
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(
+            () => {
+
+                startMusic();
+
+            },
+            300
+        );
+
+    }
+);
+
+
+startButton.addEventListener(
+    "click",
+    () => {
+
+        startMusic();
+
+        startScreen.classList.add(
+            "hidden"
+        );
+
+    }
+);
+
+
+musicButton.addEventListener(
+    "click",
+    () => {
+
+        if(musicPlaying){
+
+            music.pause();
+
+            musicPlaying = false;
+
+            musicButton.textContent =
+                "🔇";
+
+        }else{
+
+            startMusic();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   GERÇEK YAZI KALBİ
+===================================================== */
+
+const textHeart =
+    document.getElementById("textHeart");
+
+
+const heartWords = [
+
+    "lorena",
+    "melania",
+    "Aşkım",
+    "I Love You",
+    "Seni Seviyorum"
+
+];
+
+
+/*
+    Matematiksel kalp:
+
+    x = 16 sin³(t)
+
+    y =
+    13cos(t)
+    - 5cos(2t)
+    - 2cos(3t)
+    - cos(4t)
+
+    Kelimeler bu koordinatlara
+    yerleştiriliyor.
+*/
+
+
+function createHeartLayer(
+    scale,
+    amount,
+    sizeBase,
+    layerOffset
+){
+
+    for(let i = 0; i < amount; i++){
+
+        const t =
+            (Math.PI * 2 * i)
+            / amount;
+
+        const x =
+            16 *
+            Math.pow(
+                Math.sin(t),
+                3
+            );
+
+        const y =
+            13 * Math.cos(t)
+            - 5 * Math.cos(2*t)
+            - 2 * Math.cos(3*t)
+            - Math.cos(4*t);
+
+
+        /*
+            Kalbi ekrana sığdırıyoruz.
+        */
+
+        const left =
+            50 +
+            x *
+            2.25 *
+            scale;
+
+        const top =
+            50 -
+            y *
+            2.25 *
+            scale;
+
+
+        const word =
+            document.createElement("span");
+
+        word.className =
+            "heart-word";
+
+        word.textContent =
+            heartWords[
+                (i + layerOffset)
+                % heartWords.length
+            ];
+
+
+        /*
+            YAZILAR BURADA ÖNCEKİNE
+            GÖRE DAHA KÜÇÜK.
+
+            Böylece ortadaki Sinem
+            daha rahat okunuyor.
+        */
+
+        const size =
+            sizeBase +
+            ((i * 7) % 4);
+
+
+        word.style.fontSize =
+            size + "px";
+
+        word.style.left =
+            left + "%";
+
+        word.style.top =
+            top + "%";
+
+
+        /*
+            Hafif farklı parlaklık.
+        */
+
+        word.style.opacity =
+            .72 +
+            ((i % 4) * .05);
+
+
+        textHeart.appendChild(word);
+
+    }
+
+}
+
+
+/*
+    4 katman korunuyor.
+
+    Sadece yazılar küçültüldü.
+*/
+
+createHeartLayer(
+    1.00,
+    58,
+    8,
+    0
+);
+
+createHeartLayer(
+    .82,
+    48,
+    7,
+    1
+);
+
+createHeartLayer(
+    .64,
+    38,
+    7,
+    2
+);
+
+createHeartLayer(
+    .45,
+    28,
+    6,
+    3
+);
+
+
+/* =====================================================
+   ORTA BÖLGEYİ TEMİZ TUT
+===================================================== */
+
+/*
+    Merkezdeki Sinem'in daha rahat görünmesi
+    için kalbin içindeki kelimeleri hafifçe
+    geri plana alıyoruz.
+
+    Kalbin dış şekli değişmiyor.
+*/
+
+const allHeartWords =
+    document.querySelectorAll(
+        ".heart-word"
+    );
+
+allHeartWords.forEach(
+    word => {
+
+        const top =
+            parseFloat(
+                word.style.top
+            );
+
+        const left =
+            parseFloat(
+                word.style.left
+            );
+
+        /*
+            Merkeze çok yaklaşan kelimeler
+            biraz daha küçük ve soluk.
+        */
+
+        const centerDistance =
+            Math.sqrt(
+                Math.pow(left - 50, 2) +
+                Math.pow(top - 53, 2)
+            );
+
+        if(centerDistance < 24){
+
+            word.style.opacity = ".35";
+
+            word.style.fontSize =
+                Math.max(
+                    7,
+                    parseFloat(
+                        word.style.fontSize
+                    ) - 2
+                ) + "px";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   YAZILARI SÜREKLİ DEĞİŞTİR
+===================================================== */
+
+let wordChangeIndex = 0;
+
+
+function changeHeartWords(){
+
+    const allWords =
+        document.querySelectorAll(
+            ".heart-word"
+        );
+
+
+    allWords.forEach(
+        (word,index) => {
+
+            if(index % 3 === 0){
+
+                word.style.opacity =
+                    ".15";
+
+                word.style.transform =
+                    "translate(-50%,-50%) scale(.82)";
+
+
+                setTimeout(
+                    () => {
+
+                        word.textContent =
+                            heartWords[
+                                (
+                                    wordChangeIndex
+                                    + index
+                                )
+                                %
+                                heartWords.length
+                            ];
+
+
+                        /*
+                            Kelimeler geri gelirken
+                            küçükten büyüğe çıkıyor.
+                        */
+
+                        word.style.opacity =
+                            ".82";
+
+                        word.style.transform =
+                            "translate(-50%,-50%) scale(1)";
+
+                    },
+                    (index % 12) * 35
+                );
+
+            }
+
+        }
+    );
+
+
+    wordChangeIndex++;
+
+}
+
+
+setInterval(
+    changeHeartWords,
+    3000
+);
+
+
+/* =====================================================
+   SİNEM KALP ATIŞI
+===================================================== */
+
+const centerName =
+    document.querySelector(
+        ".center-name"
+    );
+
+
+function centerBeat(){
+
+    centerName.style.transform =
+        "translate(-50%,-50%) scale(1.13)";
+
+
+    setTimeout(
+        () => {
+
+            centerName.style.transform =
+                "translate(-50%,-50%) scale(1)";
+
+        },
+        120
+    );
+
+}
+
+
+setInterval(
+    centerBeat,
+    1150
+);
+
+
+/* =====================================================
+   MESAJLAR
+===================================================== */
+
+const messages = [
+
+   Lorena & Melania ❤️"
+
+];
+
+
+const distanceText =
+    document.getElementById(
+        "distanceText"
+    );
+
+
+let messageIndex = 0;
+
+
+function changeMessage(){
+
+    distanceText.style.opacity =
+        "0";
+
+    distanceText.style.transform =
+        "translateY(8px)";
+
+
+    setTimeout(
+        () => {
+
+            messageIndex =
+                (
+                    messageIndex + 1
+                )
+                %
+                messages.length;
+
+
+            distanceText.textContent =
+                messages[
+                    messageIndex
+                ];
+
+
+            distanceText.style.opacity =
+                "1";
+
+            distanceText.style.transform =
+                "translateY(0)";
+
+        },
+        500
+    );
+
+}
+
+
+setInterval(
+    changeMessage,
+    5000
+);
+
+
+/* =====================================================
+   İLK ETKİLEŞİM
+===================================================== */
+
+document.addEventListener(
+    "click",
+    () => {
+
+        if(
+            !musicPlaying &&
+            startScreen.classList.contains(
+                "hidden"
+            )
+        ){
+
+            startMusic();
+
+        }
+
+    },
+    {once:true}
+);
+
+</script>
+
+</body>
+</html>
